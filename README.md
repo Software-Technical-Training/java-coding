@@ -8,5 +8,5 @@ Download JDK17 from https://www.oracle.com/java/technologies/downloads/#jdk17-ma
 * Verify by opening the terminal app again and typing java --version to see if JDK17 shows up
 <br><br>
 # Running the programs
-EOF
+Download VSCode and set it to use Java17
 
