@@ -26,6 +26,25 @@ public class ArrayMisc {
         int[] a = {4,8,33,45,17,2,6,88};
         // reverse the elements of the array and print it out
         
+        // empty array
+        int[] reverse = new int[a.length];
+        // for loop starting at the end and going backwards
+        int counter = 0;
+        for(int i = a.length-1; i >= 0; i--){
+            //add each element one by one to the empty array
+            reverse[counter] = a[i];
+            counter++;
+        }
+        printArray(reverse);
+    }
+
+    private static void printArray(int[] arr){
+        System.out.print("[");
+        for(int val : arr){
+            System.out.print(val);
+            System.out.print(", ");
+        }
+        System.out.println("]");
     }
 
     private static void rotateArray() {
@@ -41,7 +60,7 @@ public class ArrayMisc {
     }
 
     private static void findMissingNum() {
-        int a = {1,2,3,4,6};
+        int[] a = {1,2,3,4,6};
         // print the missing num in the sequence 
         // ex 5 in the above array
         
