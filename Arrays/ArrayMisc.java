@@ -50,7 +50,26 @@ public class ArrayMisc {
     private static void rotateArray() {
         int[] a = {4,8,33,45,17,2,6,88};
         // rotate this array counter clockwise by 4 elements and print
-        
+        //new array with 4 elements
+        // add the first four elements to the new array
+        // add them back to the end of the original array.
+
+        int[] newArray = new int[4];
+        for(int i = 0; i < 4; i++){
+            newArray[i] = a[i];
+        }
+        printArray(newArray);
+        // a = {4,8,33,45,17,2,6,88}
+        for(int i = 4; i < a.length; i++){
+            a[i-4] = a[i];
+        }
+        printArray(a);
+        // a = {17,2,6,88,17,2,6,88}
+        for(int i = 4; i < a.length; i++){
+            a[i] = newArray[i-4];
+        }
+        // a = {17,2,6,88,4,8,33,45}
+        printArray(a);
     }
 
     private static void largestNum() {
