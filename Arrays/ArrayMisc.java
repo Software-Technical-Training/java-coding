@@ -9,6 +9,8 @@ public class ArrayMisc {
         rotateArray();
         System.out.println("-----------------------largestNum");
         largestNum();
+        System.out.println("-----------------------findMissingNum");
+        findMissingNum();
         System.out.println("-----------------------arrayPermute");
         arrayPermute();
         System.out.println("-----------------------concatArr");
@@ -74,14 +76,31 @@ public class ArrayMisc {
 
     private static void largestNum() {
         int[] a = {4,8,33,45,17,2,6,88};
+        int[] newArray = new int[a.length];
         // arrange the elements in descending order and print
-        
+        for(int i = 0; i < a.length-1; i++){
+            if(a[i] <= a[i+1]){
+                newArray[0] = a[i+1];
+                newArray[newArray.length-1] = a[i];
+            } else {
+                newArray[0] = a[i];
+                newArray[newArray.length-1] = a[i+1];
+            }
+        }
+        printArray(newArray);
     }
 
     private static void findMissingNum() {
         int[] a = {1,2,3,4,6};
         // print the missing num in the sequence 
         // ex 5 in the above array
+        for(int i = 0; i < a.length-1; i++){
+            if(a[i]+1 != a[i+1]){
+                System.out.println(a[i]+1);
+            } else {
+                continue;
+            }
+        }
         
     }
 
