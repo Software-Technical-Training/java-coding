@@ -81,8 +81,12 @@ public class ArrayMisc {
         List<Integer> newArray = new ArrayList<>();
         // arrange the elements in descending order and print
         // create new array list
-        // if the first element in a is less than the next, append to end of the list
-        // if the next element is less than the previous, append the previous to the beginning
+        // first item goes in the new array
+        // check if next item is bigger or smaller than previous
+        // if it is bigger, it goes before, if smaller, it goes after
+        // check if element is smaller than previous elements.
+        // check the absolute value difference for each element and the elements before it
+        // place the element after the element with the smallest abs value difference
         for(int i = 0; i < a.length-1; i++){
             if(a[i] <= a[i+1]){
                 newArray.add(0, a[i+1]);
@@ -126,6 +130,7 @@ public class ArrayMisc {
     }
 
     private static void concatArr() {
+        int[] nums = {1,2,1};
         /*
          * Input: nums = [1,2,1]
 Output: [1,2,1,1,2,1]
@@ -133,7 +138,21 @@ Explanation: The array ans is formed as follows:
 - ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
 - ans = [1,2,1,1,2,1]
          */
-        
+        int i = 1;
+        int[] newArr = new int[(nums.length)*2];
+        while(i<=2){
+            if(i == 1){
+                for(int j = 0; j < nums.length; j++){
+                    newArr[j] = nums[j];
+                }
+            } else {
+                for(int j = 0; j < nums.length; j++){
+                    newArr[j+3] = nums[j];
+                }
+            }
+            i++;
+        }
+        printArray(newArr);
     }
 
     private static void runningSums() {
