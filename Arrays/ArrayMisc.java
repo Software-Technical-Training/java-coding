@@ -1,4 +1,6 @@
 package Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ArrayMisc {
     
@@ -76,18 +78,21 @@ public class ArrayMisc {
 
     private static void largestNum() {
         int[] a = {4,8,33,45,17,2,6,88};
-        int[] newArray = new int[a.length];
+        List<Integer> newArray = new ArrayList<>();
         // arrange the elements in descending order and print
+        // create new array list
+        // if the first element in a is less than the next, append to end of the list
+        // if the next element is less than the previous, append the previous to the beginning
         for(int i = 0; i < a.length-1; i++){
             if(a[i] <= a[i+1]){
-                newArray[0] = a[i+1];
-                newArray[newArray.length-1] = a[i];
+                newArray.add(0, a[i+1]);
+                newArray.add(a[i]);
             } else {
-                newArray[0] = a[i];
-                newArray[newArray.length-1] = a[i+1];
+                newArray.add(0, a[i]);
+                newArray.add(a[i+1]);
             }
         }
-        printArray(newArray);
+        System.out.println(newArray);
     }
 
     private static void findMissingNum() {
@@ -101,19 +106,23 @@ public class ArrayMisc {
                 continue;
             }
         }
-        
     }
 
     private static void arrayPermute() {
-        /*
-         * Input: nums = [0,2,1,5,3,4]
-Output: [0,1,2,4,5,3]
-Explanation: The array ans is built as follows: 
-ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
-    = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
-    = [0,1,2,4,5,3]
-         */
-        
+        int[] nums = {0,2,1,5,3,4};
+        int[] newArray = new int[nums.length];
+    /* Output: [0,1,2,4,5,3]
+    Explanation: The array ans is built as follows: 
+    ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
+        = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
+        = [0,1,2,4,5,3]
+        - new array
+        - each element in the og array becomes an index */        
+         
+        for(int i = 0; i < nums.length; i++){
+            newArray[i] = nums[nums[i]];
+        }
+        printArray(newArray);
     }
 
     private static void concatArr() {
