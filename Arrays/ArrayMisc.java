@@ -176,8 +176,28 @@ Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
     private static void maxWealth() {
         /*
          * Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
-            Output: Richest customer is 3 with a wealth of 17
+            Output: Richest customer is 1 with a wealth of 17
          */
+
+        int[][] accounts = {{7,1,3},{2,8,7},{1,9,5},};
+        int [] sums = new int[accounts.length];
+        for(int i = 0; i < accounts.length; i++){
+            int arraySum = 0;
+            for(int j = 0; j < accounts[i].length; j++){
+                // sums up each individual customer
+                arraySum += accounts[i][j];
+                sums[i] = arraySum;
+            }
+        }
+        int max = sums[0];
+        for(int i = 1; i < sums.length; i++){
+            if(max < sums[i]){
+                max = sums[i];
+            } else {
+                continue;
+            }
+        }
+        System.out.println("Richest customer has a wealth of " + max);
     }
 
     private static void mostWordsFound() {
