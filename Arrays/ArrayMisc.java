@@ -78,25 +78,24 @@ public class ArrayMisc {
 
     private static void largestNum() {
         int[] a = {4,8,33,45,17,2,6,88};
-        List<Integer> newArray = new ArrayList<>();
         // arrange the elements in descending order and print
-        // create new array list
-        // first item goes in the new array
-        // check if next item is bigger or smaller than previous
-        // if it is bigger, it goes before, if smaller, it goes after
-        // check if element is smaller than previous elements.
-        // check the absolute value difference for each element and the elements before it
-        // place the element after the element with the smallest abs value difference
+        // check if 1st element is bigger than next.
+        // if it is, swap
+        // if it isn't keep going until the biggest element is in the front
+        // keep doing this with each element until it is sorted
         for(int i = 0; i < a.length-1; i++){
-            if(a[i] <= a[i+1]){
-                newArray.add(0, a[i+1]);
-                newArray.add(a[i]);
-            } else {
-                newArray.add(0, a[i]);
-                newArray.add(a[i+1]);
+            for(int j = i+1; j < a.length; j++){
+                int temp = 0;
+                if(a[i] < a[j]){
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                } else {
+                    continue;
+                }
             }
         }
-        System.out.println(newArray);
+        printArray(a);
     }
 
     private static void findMissingNum() {
