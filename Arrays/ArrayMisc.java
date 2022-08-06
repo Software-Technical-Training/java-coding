@@ -90,9 +90,7 @@ public class ArrayMisc {
                     temp = a[i];
                     a[i] = a[j];
                     a[j] = temp;
-                } else {
-                    continue;
-                }
+                } 
             }
         }
         printArray(a);
@@ -105,9 +103,7 @@ public class ArrayMisc {
         for(int i = 0; i < a.length-1; i++){
             if(a[i]+1 != a[i+1]){
                 System.out.println(a[i]+1);
-            } else {
-                continue;
-            }
+            } 
         }
     }
 
@@ -123,6 +119,7 @@ public class ArrayMisc {
         - each element in the og array becomes an index */        
          
         for(int i = 0; i < nums.length; i++){
+            // check if its valid index
             newArray[i] = nums[nums[i]];
         }
         printArray(newArray);
@@ -137,20 +134,15 @@ Explanation: The array ans is formed as follows:
 - ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
 - ans = [1,2,1,1,2,1]
          */
-        int i = 1;
         int[] newArr = new int[(nums.length)*2];
-        while(i<=2){
-            if(i == 1){
-                for(int j = 0; j < nums.length; j++){
-                    newArr[j] = nums[j];
-                }
-            } else {
-                for(int j = 0; j < nums.length; j++){
-                    newArr[j+3] = nums[j];
-                }
+        for (int j=0; j < newArr.length; j++) {
+            int temp = j;
+            if(temp >= nums.length){
+                temp = j - nums.length;
             }
-            i++;
+            newArr[j] = nums[temp];
         }
+
         printArray(newArr);
     }
 
@@ -192,9 +184,7 @@ Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].
         for(int i = 1; i < sums.length; i++){
             if(max < sums[i]){
                 max = sums[i];
-            } else {
-                continue;
-            }
+            } 
         }
         System.out.println("Richest customer has a wealth of " + max);
     }
