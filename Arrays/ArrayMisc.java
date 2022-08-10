@@ -209,9 +209,24 @@ Explanation:
 - The third sentence, "this is great thanks very much", has 6 words in total.
 Thus, the maximum number of words in a single sentence comes from the third sentence, which has 6 words.
          */
-
+        String [] sentences = {"alice and bob love leetcode", "i think so too", "this is great thanks very much"};
+        int[] wordCounts = new int[sentences.length];
+        for(int i = 0; i < sentences.length; i++){
+            int wordCount = 0;
+            String sentence = sentences[i];
+            for(int j = 0; j < sentence.length(); j++){
+                if(sentence.charAt(j) == ' '){
+                    wordCount++;
+                }
+            }
+            wordCounts[i] = wordCount + 1;
+        }
+        int max = wordCounts[0];
+        for(int i = 1; i < wordCounts.length; i++){
+            if(max < wordCounts[i]){
+                max = wordCounts[i];
+            }
+        }
+        System.out.println("The max number of words is " + max);
     }
-
-
-
 }
