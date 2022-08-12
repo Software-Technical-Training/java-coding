@@ -242,6 +242,14 @@ Explanation: Each pair in the array are good.
 Input: nums = [1,2,3]
 Output: 0
          */
-        
+        int count = 0;
+        for(int j = 0; j < nums.length; j++){
+            for(int i = 0; i < j; i++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
     }
 }
