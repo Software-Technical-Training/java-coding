@@ -30,7 +30,13 @@ public class ArrayMisc {
         numGoodPairs(nums);
         nums = new int[]{1,2,3};
         numGoodPairs(nums);
-
+        System.out.println("-----------------------extraCandies");
+        System.out.println("[2,3,5,1,3], extra : 3");
+        greatestNumCandies(new int[]{2,3,5,1,3}, 3);
+        System.out.println("[4,2,1,1,2], extra : 1");
+        greatestNumCandies(new int[]{4,2,1,1,2}, 1);
+        System.out.println("-----------------------smallerNumbersThanCurrent");
+        smallerNumbersThanCurrent();
         
     }
 
@@ -251,5 +257,17 @@ Output: 0
             }
         }
         System.out.println(count);
+    }
+
+    private static void greatestNumCandies(int[] candies,int extraCandies) {
+        // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+
+        
+    }
+
+    private static void smallerNumbersThanCurrent() {
+        // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+        // Do all three examples
+        
     }
 }
