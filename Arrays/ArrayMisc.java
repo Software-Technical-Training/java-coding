@@ -37,6 +37,11 @@ public class ArrayMisc {
         greatestNumCandies(new int[]{4,2,1,1,2}, 1);
         System.out.println("-----------------------smallerNumbersThanCurrent");
         smallerNumbersThanCurrent();
+        System.out.println("-----------------------decodeArr");
+        System.out.println("[1,2,3,]");
+        decodeArr(new int[]{1,2,3});
+        System.out.println("[6,2,7,3]");
+        decodeArr(new int[]{6,2,7,3});
         
     }
 
@@ -296,6 +301,11 @@ Output: 0
     private static void smallerNumbersThanCurrent() {
         // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
         // Do all three examples
+        
+    }
+
+    private static void decodeArr(int[] arr) {
+        // https://leetcode.com/problems/decode-xored-array/
         
     }
 }
