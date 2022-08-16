@@ -260,6 +260,34 @@ Output: 0
     }
 
     private static void greatestNumCandies(int[] candies,int extraCandies) {
+        /*int temp = 0;
+        
+        for(int candy : candies){
+            temp = candy += extraCandies;
+            for(int i = 1; i < candies.length; i++){
+                if(temp <= candies[i]){
+                    isMax = false;
+                }
+            }
+        } */
+        Boolean[] isGreatest = new Boolean[candies.length];
+        int max = candies[0];
+        for(int i = 1; i < candies.length; i++){
+            if(max < candies[i]){
+                max = candies[i];
+            }
+        }
+
+        for(int i = 0; i < candies.length; i++){
+            Boolean isMax = true;
+            if(candies[i]+extraCandies < max){
+                isMax = false;
+            }
+            isGreatest[i] = isMax;
+        }
+        for(Boolean value : isGreatest){
+            System.out.print(value + " ");
+        }
         // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
 
         
