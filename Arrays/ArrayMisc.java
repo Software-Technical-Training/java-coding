@@ -37,6 +37,16 @@ public class ArrayMisc {
         greatestNumCandies(new int[]{4,2,1,1,2}, 1);
         System.out.println("-----------------------smallerNumbersThanCurrent");
         smallerNumbersThanCurrent();
+        System.out.println("-----------------------decodeArr");
+        System.out.println("[1,2,3,]");
+        decodeArr(new int[]{1,2,3});
+        System.out.println("[6,2,7,3]");
+        decodeArr(new int[]{6,2,7,3});
+        System.out.println("-----------------------createTargetArr");
+        System.out.println("{0,1,2,3,4},{0,1,2,2,1}");
+        createTargetArray(new int[]{0,1,2,3,4}, new int[]{0,1,2,2,1});
+        System.out.println("{1,2,3,4,0},{0,1,2,3,0}");
+        createTargetArray(new int[]{1,2,3,4,0}, new int[]{0,1,2,3,0});
         
     }
 
@@ -296,5 +306,32 @@ Output: 0
         // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
         // Do all three examples
         
+    }
+
+    private static void decodeArr(int[] arr) {
+        // https://leetcode.com/problems/decode-xored-array/
+        
+    }
+
+    private static void createTargetArray(int[] nums, int[] index) {
+        // https://leetcode.com/problems/create-target-array-in-the-given-order/
+
+
+
+        /**
+         * WARNING : DO NOT LOOK AT SOLUTION BELOW
+         */
+        int[] target = new int[nums.length];
+        for (int i=0; i< nums.length; i++) {
+            int val = nums[i];
+            int idx = index[i];
+            if(idx < i){
+                for(int j=i; j > idx;j--){
+                    target[j] = target[j-1];
+                }
+            }
+            target[idx] = val;
+        }
+        printArray(target);
     }
 }
