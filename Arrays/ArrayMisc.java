@@ -36,7 +36,9 @@ public class ArrayMisc {
         System.out.println("[4,2,1,1,2], extra : 1");
         greatestNumCandies(new int[]{4,2,1,1,2}, 1);
         System.out.println("-----------------------smallerNumbersThanCurrent");
-        smallerNumbersThanCurrent();
+        smallerNumbersThanCurrent(new int[]{8,1,2,2,3});
+        smallerNumbersThanCurrent(new int[]{6,5,4,8});
+        smallerNumbersThanCurrent(new int[]{7,7,7,7});
         System.out.println("-----------------------decodeArr");
         System.out.println("[1,2,3,]");
         decodeArr(new int[]{1,2,3});
@@ -302,10 +304,22 @@ Output: 0
         
     }
 
-    private static void smallerNumbersThanCurrent() {
+    private static void smallerNumbersThanCurrent(int[] nums) {
         // https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
         // Do all three examples
-        
+        int[] smallerNumCounts = new int[nums.length];
+        for(int i = 0; i < nums.length; i++){
+            int smallerNumCount = 0;
+            for(int j = 0; j < nums.length; j++){
+                if(j!=i){
+                    if(nums[j]<nums[i]){
+                        smallerNumCount++;
+                    }
+                }
+            }
+            smallerNumCounts[i] = smallerNumCount;
+        }
+        printArray(smallerNumCounts);
     }
 
     private static void decodeArr(int[] arr) {
@@ -316,22 +330,5 @@ Output: 0
     private static void createTargetArray(int[] nums, int[] index) {
         // https://leetcode.com/problems/create-target-array-in-the-given-order/
 
-
-
-        /**
-         * WARNING : DO NOT LOOK AT SOLUTION BELOW
-         */
-        int[] target = new int[nums.length];
-        for (int i=0; i< nums.length; i++) {
-            int val = nums[i];
-            int idx = index[i];
-            if(idx < i){
-                for(int j=i; j > idx;j--){
-                    target[j] = target[j-1];
-                }
-            }
-            target[idx] = val;
-        }
-        printArray(target);
     }
 }
