@@ -324,11 +324,23 @@ Output: 0
 
     private static void decodeArr(int[] arr) {
         // https://leetcode.com/problems/decode-xored-array/
+
         
     }
 
     private static void createTargetArray(int[] nums, int[] index) {
         // https://leetcode.com/problems/create-target-array-in-the-given-order/
-
+        int[] target = new int[nums.length];
+        for(int i = 0; i < index.length; i++){
+            if(index[i] < i){
+                for(int j = target.length-2; j >= index[i]; j--){
+                    target[j+1] = target[j];
+                }
+                target[index[i]] = nums[i];
+            } else {
+                target[index[i]] = nums[i];
+            }
+        }
+        printArray(target);
     }
 }
