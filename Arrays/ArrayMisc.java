@@ -49,7 +49,12 @@ public class ArrayMisc {
         createTargetArray(new int[]{0,1,2,3,4}, new int[]{0,1,2,2,1});
         System.out.println("{1,2,3,4,0},{0,1,2,3,0}");
         createTargetArray(new int[]{1,2,3,4,0}, new int[]{0,1,2,3,0});
-        
+        System.out.println("-----------------------restoreString");
+        restoreString("codeleet", new int[]{4,5,6,7,0,2,1,3});
+        restoreString("abc", new int[]{0,1,2});
+        System.out.println("-----------------------countMatches");
+        countMatches(new String[][]{{"phone","blue","pixel"},{"computer","silver","lenovo"},{"phone","gold","iphone"}}, "color", "silver");
+        countMatches(new String[][]{{"phone","blue","pixel"},{"computer","silver","lenovo"},{"phone","gold","iphone"}}, "type", "phone");
     }
 
     private static void reverseArray() {
@@ -342,5 +347,37 @@ Output: 0
             }
         }
         printArray(target);
+    }
+
+    private static void restoreString(String s, int[] indices) {
+        /**
+         * You are given a string s and an integer array indices of the same length. 
+         * The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+         * Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+Output: "leetcode"
+Explanation: As shown, "codeleet" becomes "leetcode" after shuffling.
+         */
+        
+    }
+
+    private static void countMatches(String[][] items, String ruleKey, String ruleValue) {
+        /**
+         * You are given an array items, where each items[i] = [typei, colori, namei] describes the type, color, and name of the ith item. You are also given a rule represented by two strings, ruleKey and ruleValue.
+
+The ith item is said to match the rule if one of the following is true:
+
+ruleKey == "type" and ruleValue == typei.
+ruleKey == "color" and ruleValue == colori.
+ruleKey == "name" and ruleValue == namei.
+Return the number of items that match the given rule.
+Input: items = [["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], ruleKey = "color", ruleValue = "silver"
+Output: 1
+Explanation: There is only one item matching the given rule, which is ["computer","silver","lenovo"].
+Input: items = [["phone","blue","pixel"],["computer","silver","phone"],["phone","gold","iphone"]], ruleKey = "type", ruleValue = "phone"
+Output: 2
+Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"] and ["phone","gold","iphone"]. Note that the item ["computer","silver","phone"] does not match.
+
+         */
+        
     }
 }
