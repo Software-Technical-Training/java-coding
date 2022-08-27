@@ -380,4 +380,16 @@ Explanation: There are only two items matching the given rule, which are ["phone
          */
         
     }
+
+    private static void arithmeticTriplets(int[] nums, int diff) {
+        /**
+         * https://leetcode.com/problems/number-of-arithmetic-triplets/
+         */
+        
+    }
+
+    private static void largestLocal(int[][] grid) {
+        // https://leetcode.com/problems/largest-local-values-in-a-matrix/
+        
+    }
 }
