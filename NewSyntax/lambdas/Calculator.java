@@ -4,7 +4,7 @@ public class Calculator {
     
     @FunctionalInterface
     interface Operation<T> {
-        T operate(T a, T b);
+        abstract T operate(T a, T b);
     }
 
     public void calculate(int x, int y, Operation<Integer> op){
